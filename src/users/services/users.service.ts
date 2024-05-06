@@ -9,7 +9,16 @@ export class UsersService {
   private readonly users: Record<string, User>;
 
   constructor() {
-    this.users = {}
+    this.users = {
+      'b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a11': {
+        id: 'b1eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
+        name: 'testUser1',
+        password: '111111',
+      }
+      // TODO: add users
+      // b3eebc99-9c0b-4ef8-bb6d-6bb9bd380a12
+      // b5eebc99-9c0b-4ef8-bb6d-6bb9bd380a13
+    }
   }
 
   findOne(userId: string): User {
