@@ -1,0 +1,29 @@
+service: nest-cart-api
+
+frameworkVersion: "3"
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: eu-west-1
+
+  environment:
+    PG_HOST: aws-test-shop-instance.c7i2mw8q6834.eu-west-1.rds.amazonaws.com
+    PG_PORT: 5432
+    PG_DATABASE: aws_test_shop
+    PG_USERNAME: postgres
+    PG_PASSWORD: 1wR95&ch
+
+functions:
+  main:
+    handler: dist/main.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'
